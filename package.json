@@ -23,6 +23,7 @@
     "github:release": "tfr"
   },
   "devDependencies": {
+    "@fission-ai/openspec": "^1.6.0",
     "@tofrankie/action": "^0.0.8",
     "@tofrankie/eslint": "^0.5.0",
     "@tofrankie/prettier": "^0.2.0",
