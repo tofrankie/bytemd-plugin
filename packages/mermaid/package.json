@@ -1,0 +1,42 @@
+{
+  "name": "bytemd-plugin-mermaid",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.33.4",
+  "description": "ByteMD plugin to support Mermaid diagram",
+  "author": "Frankie <1426203851@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/bytemd-plugin/tree/main/packages/mermaid",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tofrankie/bytemd-plugin.git",
+    "directory": "packages/mermaid"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./locales/*": "./locales/*",
+    "./lib/locales/*": "./locales/*"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "jsdelivr": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "dist",
+    "locales"
+  ],
+  "peerDependencies": {
+    "bytemd": "^1.5.0"
+  },
+  "dependencies": {
+    "mermaid": "^10.0.2"
+  },
+  "devDependencies": {
+    "bytemd": "^1.22.0"
+  }
+}
