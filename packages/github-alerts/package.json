@@ -1,0 +1,56 @@
+{
+  "name": "bytemd-plugin-github-alerts",
+  "type": "module",
+  "version": "0.0.2",
+  "packageManager": "pnpm@10.33.4",
+  "description": "ByteMD plugin to support GitHub Alerts",
+  "author": "Frankie <1426203851@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/bytemd-plugin/packages/github-alerts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tofrankie/bytemd-plugin.git",
+    "directory": "packages/github-alerts"
+  },
+  "bugs": {
+    "url": "https://github.com/tofrankie/bytemd-plugin/issues"
+  },
+  "keywords": [
+    "bytemd",
+    "plugin",
+    "alerts",
+    "github",
+    "gfm"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./index.css": "./index.css"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.umd.js",
+  "jsdelivr": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "dist",
+    "index.css"
+  ],
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "prepublishOnly": "run-s typecheck build",
+    "typecheck": "tsc --noEmit",
+    "publint": "publint"
+  },
+  "peerDependencies": {
+    "bytemd": "^1.5.0"
+  },
+  "devDependencies": {
+    "bytemd": "^1.22.0"
+  }
+}
