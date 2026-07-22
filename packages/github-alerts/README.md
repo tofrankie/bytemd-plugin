@@ -2,7 +2,9 @@
 
 [![npm version](https://img.shields.io/npm/v/bytemd-plugin-github-alerts)](https://www.npmjs.com/package/bytemd-plugin-github-alerts) [![npm package license](https://img.shields.io/npm/l/bytemd-plugin-github-alerts)](https://github.com/tofrankie/bytemd-plugin/blob/main/LICENSE) [![npm last update](https://img.shields.io/npm/last-update/bytemd-plugin-github-alerts)](https://www.npmjs.com/package/bytemd-plugin-github-alerts)
 
-[ByteMD](https://github.com/pd4d10/bytemd) plugin to support [GitHub Alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts).
+A bytemd plugin that supports [GitHub Alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts).
+
+## Preview
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
