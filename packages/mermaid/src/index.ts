@@ -145,14 +145,12 @@ another task      : 24d`,
 
         if (!m) {
           m = await import('mermaid').then(c => c.default)
-          if (mermaidConfig) {
-            m.initialize(mermaidConfig)
-          }
+          m.initialize(mermaidConfig)
         }
 
         els.forEach((el, i) => {
           const pre = el.parentElement!
-          const source = el.textContent
+          const source = el.textContent ?? ''
 
           const container = document.createElement('div')
           container.classList.add('bytemd-mermaid')
@@ -160,8 +158,9 @@ another task      : 24d`,
           pre.replaceWith(container)
 
           m.render(`bytemd-mermaid-${Date.now()}-${i}`, source, container)
-            .then(svgCode => {
-              container.innerHTML = svgCode.svg
+            .then(({ bindFunctions, svg }) => {
+              container.innerHTML = svg
+              bindFunctions?.(container)
             })
             .catch(err => {
               console.error(err)

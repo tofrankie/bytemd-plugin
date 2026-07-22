@@ -1,5 +1,6 @@
 {
   "name": "bytemd-plugin-mermaid",
+  "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@10.33.4",
   "description": "ByteMD plugin to support Mermaid diagram",
@@ -30,11 +31,18 @@
     "dist",
     "locales"
   ],
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "prepublishOnly": "run-s typecheck build",
+    "typecheck": "tsc --noEmit",
+    "publint": "publint"
+  },
   "peerDependencies": {
     "bytemd": "^1.5.0"
   },
   "dependencies": {
-    "mermaid": "^10.0.2"
+    "mermaid": "^11.16.0"
   },
   "devDependencies": {
     "bytemd": "^1.22.0"

@@ -1,37 +1,35 @@
-import { Editor } from '@bytemd/react'
-import alerts from 'bytemd-plugin-github-alerts'
-import { useState } from 'react'
-import 'bytemd/dist/index.css'
-import 'bytemd-plugin-github-alerts/index.css'
-import 'github-markdown-css/github-markdown.css'
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom'
+import { ROUTES } from './constants'
+import GithubAlertsPage from './pages/github-alerts'
+import HomePage from './pages/index'
+import MermaidPage from './pages/mermaid'
 
-const alertsMarkdown = `
-## GitHub Alerts
+function AppShell() {
+  return <Outlet />
+}
 
-> Text that is a quote
+const exampleRouteElements = {
+  'github-alerts': <GithubAlertsPage />,
+  mermaid: <MermaidPage />,
+}
 
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
-
-> [!TIP]
-> Helpful advice for doing things better or more easily.
-
-> [!IMPORTANT]
-> Key information users need to know to achieve their goal.
-
-> [!WARNING]
-> Urgent info that needs immediate user attention to avoid problems.
-
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
-`
-
-const plugins = [
-  alerts(), // must be placed before @bytemd/plugin-breaks
-]
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppShell />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      ...ROUTES.map(route => ({
+        path: route.path,
+        element: exampleRouteElements[route.id],
+      })),
+    ],
+  },
+])
 
 export default function App() {
-  const [value, setValue] = useState(alertsMarkdown)
-
-  return <Editor value={value} plugins={plugins} onChange={setValue} />
+  return <RouterProvider router={router} />
 }
