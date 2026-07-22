@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/bytemd-plugin-mermaid)](https://www.npmjs.com/package/bytemd-plugin-mermaid) [![npm package license](https://img.shields.io/npm/l/bytemd-plugin-mermaid)](https://github.com/tofrankie/bytemd-plugin/blob/main/LICENSE) [![npm last update](https://img.shields.io/npm/last-update/bytemd-plugin-mermaid)](https://www.npmjs.com/package/bytemd-plugin-mermaid)
 
-A bytemd plugin that supports Mermaid diagram.
+A bytemd plugin that supports [Mermaid](https://mermaid.ai/open-source/syntax/examples.html) diagram.
 
 ## Usage
 
@@ -18,7 +18,8 @@ import 'bytemd/dist/index.css'
 
 const plugins = [
   mermaid({
-    theme: 'dark',
+    // More Options: https://mermaid.ai/open-source/config/schema-docs/config.html
+    // theme: 'dark',
   }),
 ]
 
@@ -28,10 +29,6 @@ export default function App() {
   return <Editor value={value} plugins={plugins} onChange={setValue} />
 }
 ````
-
-## Options
-
-Mermaid options are passed through to `mermaid.initialize()`. For example, use `theme: 'dark'` to render diagrams with Mermaid's built-in dark theme.
 
 ## Credits
 
